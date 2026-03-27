@@ -1,0 +1,1 @@
+/home/harshit/Desktop/projects/stellar-orange-belt/smart_contract/target/wasm32-unknown-unknown/release/ping_contract.wasm: /home/harshit/Desktop/projects/stellar-orange-belt/smart_contract/src/lib.rs /home/harshit/Desktop/projects/stellar-orange-belt/smart_contract/src/test.rs
