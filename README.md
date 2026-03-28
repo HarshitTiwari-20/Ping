@@ -60,7 +60,7 @@ The frontend is a beautifully styled, responsive Next.js application that integr
 
 1. Navigate to the frontend directory:
    ```bash
-   cd ping-fe
+   cd ping
    ```
 2. Install dependencies using your preferred package manager (pnpm is configured):
    ```bash
