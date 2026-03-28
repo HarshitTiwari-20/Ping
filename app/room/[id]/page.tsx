@@ -6,7 +6,7 @@ import { useWallet } from '@/components/WalletProvider';
 import WalletConnect from '@/components/WalletConnect';
 import { CONTRACT_ID, RPC_URL, NETWORK_PASSPHRASE } from '@/components/config';
 import { rpc, Contract, nativeToScVal, scValToNative, TransactionBuilder, Account, Keypair } from '@stellar/stellar-sdk';
-import { signTransaction } from '@stellar/freighter-api';
+
 
 export default function RoomPage() {
   const { id } = useParams() as { id: string };
@@ -109,6 +109,7 @@ export default function RoomPage() {
       .build();
 
       const preparedTransaction = await server.prepareTransaction(tx);
+      const { signTransaction } = await import('@stellar/freighter-api');
       const signedXdr = await signTransaction(preparedTransaction.toXDR(), { networkPassphrase: NETWORK_PASSPHRASE });
       if (signedXdr.error) throw new Error(signedXdr.error as string);
       

@@ -11,7 +11,7 @@ import {
   TransactionBuilder,
   xdr
 } from '@stellar/stellar-sdk';
-import { signTransaction } from '@stellar/freighter-api';
+
 import { CONTRACT_ID, RPC_URL, NETWORK_PASSPHRASE } from '@/components/config';
 
 export default function Home() {
@@ -65,6 +65,7 @@ export default function Home() {
       .build();
 
       const preparedTransaction = await server.prepareTransaction(tx);
+      const { signTransaction } = await import('@stellar/freighter-api');
       const signedXdr = await signTransaction(preparedTransaction.toXDR(), { networkPassphrase: NETWORK_PASSPHRASE });
       
       if (signedXdr.error) throw new Error(signedXdr.error as string);
