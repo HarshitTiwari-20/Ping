@@ -46,7 +46,7 @@ stellar contract deploy \
 
 ---
 
-## 🎨 Frontend (`ping-fe/`)
+## 🎨 Frontend (`ping/`)
 
 The frontend is a beautifully styled, responsive Next.js application that integrates seamlessly with the **Freighter** wallet for authentication and transaction signing.
 
