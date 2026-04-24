@@ -2,11 +2,54 @@
 
 Ping is a real-time, decentralized voting application built on the **Stellar network** using **Soroban** smart contracts and a **Next.js** frontend.
 
+<img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-31%2023-46-46.png" alt="Project">
+<img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-31%2023-46-38.png" alt="Project">
+
+
+
 ## Project Structure
 
 This repository is divided into two main components:
 - **`smart_contract/`**: The Rust-based Soroban smart contract backend.
-- **`ping-fe/`**: The Next.js React frontend with premium glassmorphism UI.
+- **`ping/`**: The Next.js React frontend with premium glassmorphism UI.
+
+### Frontend (`ping/`)
+
+```
+ping/
+├── app/                        # Next.js App Router
+│   ├── layout.tsx              # Root layout (fonts, providers)
+│   ├── page.tsx                # Home page — room creation & listing
+│   ├── globals.css             # Global styles
+│   ├── favicon.ico
+│   └── room/
+│       └── [id]/
+│           └── page.tsx        # Dynamic voting room page
+│
+├── components/
+│   ├── WalletProvider.tsx      # Freighter wallet context & hooks
+│   ├── WalletConnect.tsx       # Connect / disconnect button component
+│   └── config.ts               # Network & contract configuration
+│
+├── public/                     # Static assets
+├── next.config.ts
+├── tsconfig.json
+├── package.json
+└── pnpm-lock.yaml
+```
+
+### Smart Contract (`smart_contract/`)
+
+```
+smart_contract/
+├── src/
+│   ├── lib.rs                  # Core contract logic (vote, tally, events)
+│   └── test.rs                 # Unit & integration tests
+│
+├── Cargo.toml                  # Rust manifest & Soroban dependencies
+├── Cargo.lock
+└── target/                     # Compiled artifacts (wasm32 release binary)
+```
 
 ---
 
@@ -14,6 +57,10 @@ This repository is divided into two main components:
 Contract Address: ```https://stellar.expert/explorer/testnet/tx/d18ff0ae9337458ebbc739b367f02cbfcc1aa62447a5956a598756d065aa2d82```
 
 <img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-26%2023-46-00.png" alt="Contract">
+
+
+<img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-26%2023-45-54.png" alt="Contract">
+
 
 The smart contract ensures transparent, tamper-proof voting on the Stellar Testnet. 
 
