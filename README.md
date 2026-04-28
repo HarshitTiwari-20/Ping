@@ -2,8 +2,8 @@
 
 Ping is a real-time, decentralized voting application built on the **Stellar network** using **Soroban** smart contracts and a **Next.js** frontend.
 
-<img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-31%2023-46-46.png" alt="Project">
-<img src="https://github.com/HarshitTiwari-20/Ubuntu-ss-bkup/blob/main/Screenshot%20from%202026-03-31%2023-46-38.png" alt="Project">
+<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-03-31%2023-46-46.png?token=GHSAT0AAAAAADPD7EQYMC6DIXVKBUONNS4W2PRBJEQ" alt="Project">
+<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-03-31%2023-46-38.png?token=GHSAT0AAAAAADPD7EQYOIYFC6Q7JVTOXDUY2PRBJ2Q" alt="Project">
 
 
 
@@ -13,30 +13,107 @@ This repository is divided into two main components:
 - **`smart_contract/`**: The Rust-based Soroban smart contract backend.
 - **`ping/`**: The Next.js React frontend with premium glassmorphism UI.
 
-### Frontend (`ping/`)
+### Frontend (`ping/`) - Production-Ready Structure
 
 ```
 ping/
-├── app/                        # Next.js App Router
-│   ├── layout.tsx              # Root layout (fonts, providers)
-│   ├── page.tsx                # Home page — room creation & listing
-│   ├── globals.css             # Global styles
-│   ├── favicon.ico
+├── lib/                        # Centralized utilities and wallet adapters
+│   ├── index.ts               # Main lib export
+│   ├── config.ts              # Stellar network configuration
+│   ├── utils.ts               # Common utility functions
+│   └── wallets/               # Wallet adapter implementations
+│       ├── index.ts           # Wallet exports
+│       └── stellar-helper.ts  # Production Stellar wallet integration
+│
+├── app/                        # Next.js 16 App Router
+│   ├── layout.tsx             # Root layout (fonts, providers, metadata)
+│   ├── page.tsx               # Home page (room creation & listing)
+│   ├── globals.css            # Global Tailwind styles
+│   ├── favicon.ico            # App icon
 │   └── room/
 │       └── [id]/
-│           └── page.tsx        # Dynamic voting room page
+│           └── page.tsx       # Dynamic voting room page
 │
-├── components/
-│   ├── WalletProvider.tsx      # Freighter wallet context & hooks
-│   ├── WalletConnect.tsx       # Connect / disconnect button component
-│   └── config.ts               # Network & contract configuration
+├── components/                # Reusable React components
+│   ├── WalletProvider.tsx     # Wallet context & authentication hooks
+│   ├── WalletConnect.tsx      # Connect/disconnect button (mobile responsive)
+│   └── config.ts              # Legacy config (re-exports from lib)
 │
-├── public/                     # Static assets
-├── next.config.ts
-├── tsconfig.json
-├── package.json
-└── pnpm-lock.yaml
+├── public/                    # Static assets
+├── next.config.ts             # Next.js configuration
+├── tsconfig.json              # TypeScript configuration
+├── tailwind.config.js         # Tailwind CSS configuration
+├── postcss.config.mjs         # PostCSS configuration
+├── eslint.config.mjs          # ESLint configuration
+├── package.json               # Dependencies and scripts
+└── pnpm-lock.yaml            # Dependency lock file
 ```
+
+### Wallet Adapter Architecture
+
+The `lib/wallets/` directory contains production-level wallet integrations:
+
+- **`stellar-helper.ts`**: Enterprise-grade Stellar wallet helper
+  - Multi-wallet support via `@creit.tech/stellar-wallets-kit`
+  - Persistent wallet state with localStorage
+  - Transaction signing and verification
+  - Connection lifecycle management
+  - Environment detection (browser/SSR safe)
+
+- **`index.ts`**: Clean public API exports
+
+### Frontend Features
+
+The frontend provides a production-ready voting experience:
+
+- **Wallet Integration**: Freighter wallet support with persistent storage
+- **Real-time Updates**: Live vote tallying with 5-second polling intervals
+- **Mobile Responsive**: Fully optimized UI for mobile, tablet, and desktop
+- **Type Safe**: Full TypeScript support with strict type checking
+- **Glassmorphism UI**: Premium visual design with backdrop blur effects
+- **Error Handling**: Graceful error messages and loading states
+- **Transaction Management**: Secure transaction signing and verification
+- **Live Metrics**: Instant vote count and percentage updates
+
+### Mobile Responsive Design
+
+The application is fully optimized for all device sizes:
+
+- **Responsive Breakpoints**: Uses Tailwind's `sm:` and `md:` breakpoints
+- **Touch Friendly**: Scaled buttons and spacing for mobile (32px-40px vs desktop)
+- **Adaptive Typography**: Font sizes scale responsively (text-xs/sm on mobile)
+- **Adaptive Layout**: Hidden decorative elements on small screens
+- **Flexible Components**: Column layouts on mobile, row layouts on desktop
+
+### Environment & Setup
+
+Create a `.env.local` file:
+
+```bash
+NEXT_PUBLIC_NETWORK=testnet
+NEXT_PUBLIC_CONTRACT_ID=CDVA2BPRPJAKVKNNVI75OGB6T35JS5BFFVM5E5IIFNIOQXWLKEDHSHVU
+```
+
+### Installation & Running
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run development server with hot reload
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run linting and type checks
+pnpm lint
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ### Smart Contract (`smart_contract/`)
 
