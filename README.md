@@ -2,8 +2,8 @@
 
 Ping is a real-time, decentralized voting application built on the **Stellar network** using **Soroban** smart contracts and a **Next.js** frontend.
 
-<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-03-31%2023-46-46.png?token=GHSAT0AAAAAADPD7EQYMC6DIXVKBUONNS4W2PRBJEQ" alt="Project">
-<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-03-31%2023-46-38.png?token=GHSAT0AAAAAADPD7EQYOIYFC6Q7JVTOXDUY2PRBJ2Q" alt="Project">
+<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ping/refs/heads/main/public/Screenshot%20from%202026-03-31%2023-46-46.png" alt="Project">
+<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ping/refs/heads/main/public/Screenshot%20from%202026-03-31%2023-46-38.png" alt="Project">
 
 
 
