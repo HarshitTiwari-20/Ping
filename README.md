@@ -133,10 +133,9 @@ smart_contract/
 ## 🚀 Smart Contract (`smart_contract/`)
 Contract Address: ```https://stellar.expert/explorer/testnet/tx/d18ff0ae9337458ebbc739b367f02cbfcc1aa62447a5956a598756d065aa2d82```
 
-<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-03-26%2023-46-00.png?token=GHSAT0AAAAAADPD7EQYJBPYBNFBD73PR7PC2PRBPAQ" alt="Contract">
+<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ping/refs/heads/main/public/Screenshot%20from%202026-04-25%2000-44-19.png" alt="Contract">
 
 
-<img src="https://raw.githubusercontent.com/HarshitTiwari-20/Ubuntu-ss-bkup/refs/heads/main/Screenshot%20from%202026-04-29%2000-05-53.png?token=GHSAT0AAAAAADPD7EQYGUKNBQEF6XEMMRTU2PRBRDA" alt="Contract">
 
 
 The smart contract ensures transparent, tamper-proof voting on the Stellar Testnet. 
