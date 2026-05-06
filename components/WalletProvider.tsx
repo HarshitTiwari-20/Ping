@@ -10,6 +10,8 @@ interface WalletContextType {
   disconnect: () => void;
 }
 
+
+
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 export function WalletProvider({ children }: { children: React.ReactNode }) {
